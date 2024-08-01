@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#ff74a4 0%, #9f6ea3 100%);
+}
+
+.music-player {
+  width: 90%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.library, .recommendations, .playlists {
+  margin-bottom: 20px;
+}
+
+.track-list-slider, .recommendations-slider {
+  display: flex;
+  overflow-x: hidden;
+  gap: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.track-card, .recommendation-card {
+  min-width: 150px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.track-card:hover, .recommendation-card:hover {
+  background: #e0e0e0;
+}
+
+.track-card img, .recommendation-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.track-card h4, .recommendation-card h4 {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-card p, .recommendation-card p {
+  font-size: 12px;
+  color: #555;
+}
+
+.player-controls {
+  text-align: center;
+}
+
+.player-controls .album-art img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.progress-container, .volume-control {
+  margin: 10px 0;
+}
+
+#progress-bar, #volume-control {
+  width: 100%;
+}
+
+.options button, .options a {
+  margin: 5px;
+}
+
+.playlists .list-group-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlists .list-group-item button {
+  background: transparent;
+  border: none;
+  color: #d9534f;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.playlists .list-group-item button:hover {
+  color: #c9302c;
+}
+
+.track-list-slider::-webkit-scrollbar, .recommendations-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-nav:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.slider-nav-left {
+  left: -35px;
+}
+
+.slider-nav-right {
+  right: -35px;
+}
+
+.search-bar {
+  margin-top: 20px;
+}
+#play-all {
+  display: none; /* Ensure play all button is hidden by default */
+}
+
+/* Ensure active classes are styled */
+#shuffle.active,
+#repeat.active {
+  background-color: #4CAF50; /* Example active state style */
+}
+
+/* Style the confirmation dialog */
+.confirmation-dialog {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.confirmation-dialog.active {
+  display: block;
+}
+.confirmation-dialog .dialog-content {
+  margin-bottom: 20px;
+}
+.confirmation-dialog .dialog-buttons button {
+  margin-right: 10px;
+}
